@@ -66,5 +66,6 @@ before_script:
   - adb shell input keyevent 82 &
 
 script:
-  - ./gradlew build --continue
-  - ./gradlew connectedCheck -PdisablePreDex -Dorg.gradle.parallel=false -Pandroid.testInstrumentationRunnerArguments.notAnnotation=android.support.test.filters.FlakyTest
+  - ./gradlew build
+  #- ./gradlew detektCheck ktlintCheck
+  #- ./gradlew connectedCheck -PdisablePreDex -Dorg.gradle.parallel=false -Pandroid.testInstrumentationRunnerArguments.notAnnotation=android.support.test.filters.FlakyTest

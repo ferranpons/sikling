@@ -33,7 +33,7 @@
                     android:layout_height="56dp"
                     android:layout_gravity="center_vertical"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/sikling_logo" />
+                    android:src="@drawable/ic_home_black_24dp" />
             </FrameLayout>
 
         </android.support.v7.widget.Toolbar>

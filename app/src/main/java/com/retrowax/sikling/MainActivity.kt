@@ -7,19 +7,25 @@ import com.retrowax.sikling.adListing.AdListingFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        const val CONTENT = "content_frame"
+    }
 
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+    private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                fragmentManager.beginTransaction().add(AdListingFragment(), "content_frame").commit()
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard -> {
-                fragmentManager.beginTransaction().add(AdListingFragment(), "content_frame").commit()
+            R.id.navigation_favorites -> {
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_ad_insertion -> {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                fragmentManager.beginTransaction().add(AdListingFragment(), "content_frame").commit()
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_profile -> {
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -30,6 +36,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
 }

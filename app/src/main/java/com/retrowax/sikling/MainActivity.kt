@@ -7,13 +7,11 @@ import com.retrowax.sikling.adListing.AdListingFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    companion object {
-        const val CONTENT = "content_frame"
-    }
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
+                fragmentManager.beginTransaction().replace(R.id.content_frame, AdListingFragment()).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_favorites -> {
@@ -37,5 +35,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        navigation.selectedItemId = 0
     }
 }

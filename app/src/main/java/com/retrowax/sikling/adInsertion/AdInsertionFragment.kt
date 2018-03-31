@@ -11,6 +11,6 @@ import com.retrowax.sikling.R
 class AdInsertionFragment(): Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.fragment_ad_listing, container, false)
+        return inflater.inflate(R.layout.fragment_ad_insertion, container, false)
     }
 }

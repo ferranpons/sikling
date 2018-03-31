@@ -39,25 +39,7 @@
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
-    <LinearLayout android:id="@+id/Loading"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_gravity="center|center_vertical"
-        android:gravity="center|center_vertical"
-        android:visibility="visible"
-        android:paddingBottom="52dp"
-        tools:visibility="visible"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        >
-
-        <ProgressBar
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-
-    </LinearLayout>
+    <include layout="@layout/loading_custom_view"/>
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_container"

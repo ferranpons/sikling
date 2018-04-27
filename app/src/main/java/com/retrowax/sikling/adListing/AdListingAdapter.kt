@@ -7,13 +7,10 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import butterknife.BindView
-import butterknife.ButterKnife
 import com.bumptech.glide.Glide
 import com.retrowax.sikling.R
 
-
-class AdListingAdapter: RecyclerView.Adapter<AdListingAdapter.AdsViewHolder>() {
+class AdListingAdapter : RecyclerView.Adapter<AdListingAdapter.AdsViewHolder>() {
 
     private val adsList = ArrayList<AdListingModel>()
 
@@ -45,7 +42,6 @@ class AdListingAdapter: RecyclerView.Adapter<AdListingAdapter.AdsViewHolder>() {
             } else {
                 showNoImage(viewHolder)
             }*/
-
 
             holder.favoritesButton?.post({
                 if (position < adsList.size) {

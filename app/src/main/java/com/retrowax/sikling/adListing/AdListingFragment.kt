@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import com.retrowax.sikling.R
 import java.security.SecureRandom
 
-class AdListingFragment: Fragment() {
+class AdListingFragment : Fragment() {
 
     private val list = ArrayList<AdListingModel>()
 
@@ -122,7 +122,6 @@ class AdListingFragment: Fragment() {
                             false))
                 }
             }
-
         }
     }
 }

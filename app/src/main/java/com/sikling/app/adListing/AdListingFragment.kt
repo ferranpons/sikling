@@ -1,4 +1,4 @@
-package com.retrowax.sikling.adListing
+package com.sikling.app.adListing
 
 import android.app.Fragment
 import android.os.Bundle
@@ -8,7 +8,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.retrowax.sikling.R
+import com.sikling.app.R
 import java.security.SecureRandom
 
 class AdListingFragment : Fragment() {

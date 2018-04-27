@@ -1,4 +1,4 @@
-package com.retrowax.sikling.adListing
+package com.sikling.app.adListing
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.retrowax.sikling.R
+import com.sikling.app.R
 
 class AdListingAdapter : RecyclerView.Adapter<AdListingAdapter.AdsViewHolder>() {
 

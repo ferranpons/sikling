@@ -1,4 +1,4 @@
-package com.retrowax.sikling.adListing
+package com.sikling.app.adListing
 
 data class AdListingModel(
     internal val id: String,

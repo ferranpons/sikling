@@ -1,13 +1,13 @@
-package com.retrowax.sikling
+package com.sikling.app
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import com.retrowax.sikling.adInsertion.AdInsertionFragment
-import com.retrowax.sikling.adListing.AdListingFragment
-import com.retrowax.sikling.favorites.FavoritesFragment
-import com.retrowax.sikling.messaging.MessagingFragment
-import com.retrowax.sikling.profile.ProfileFragment
+import com.sikling.app.adInsertion.AdInsertionFragment
+import com.sikling.app.adListing.AdListingFragment
+import com.sikling.app.favorites.FavoritesFragment
+import com.sikling.app.messaging.MessagingFragment
+import com.sikling.app.profile.ProfileFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

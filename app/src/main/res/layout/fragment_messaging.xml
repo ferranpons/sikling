@@ -33,7 +33,7 @@
                     android:layout_height="56dp"
                     android:layout_gravity="center_vertical"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/sikling_logo" />
+                    android:src="@drawable/ic_home_black_24dp" />
             </FrameLayout>
 
         </android.support.v7.widget.Toolbar>
@@ -69,7 +69,7 @@
         android:layout_margin="@dimen/gap7"
         app:layout_scrollFlags="scroll|enterAlways|snap"
         app:fabSize="mini"
-        android:src="@drawable/ic_arrow_upward_black_24dp"
+        android:src="@drawable/ic_dashboard_black_24dp"
         android:visibility="gone"
         tools:visibility="visible"
         app:layout_anchor="@+id/appbar"
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
         android:gravity="center|center_horizontal"
-        android:drawableStart="@drawable/ic_place_black_24dp"
+        android:drawableStart="@drawable/ic_notifications_black_24dp"
         android:drawablePadding="@dimen/gap4"
         android:layout_marginTop="@dimen/gap7"
         android:minHeight="@dimen/gap11"

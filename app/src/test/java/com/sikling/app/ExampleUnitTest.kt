@@ -1,4 +1,4 @@
-package com.retrowax.sikling
+package com.sikling.app
 
 import org.junit.Test
 

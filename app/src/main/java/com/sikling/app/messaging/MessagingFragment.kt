@@ -1,15 +1,15 @@
-package com.retrowax.sikling.adInsertion
+package com.sikling.app.messaging
 
 import android.app.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.retrowax.sikling.R
+import com.sikling.app.R
 
-class AdInsertionFragment : Fragment() {
+class MessagingFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.fragment_ad_insertion, container, false)
+        return inflater.inflate(R.layout.fragment_messaging, container, false)
     }
 }

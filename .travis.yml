@@ -80,12 +80,5 @@ deploy:
       tags: true
     skip_cleanup: true
 
-  #- provider: script
-  #  script:
-  #    ./gradlew assembleBetaRelease crashlyticsUploadDistributionBetaRelease -PbetaDistributionReleaseNotes="$TRAVIS_LAST_COMMIT_MSG" -PbetaDistributionGroupAliases="sikling" ;
-  #  on:
-  #    branch: master
-  #  skip_cleanup: true
-
 after_deploy:
   - ./gradlew createTweet

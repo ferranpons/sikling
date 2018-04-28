@@ -47,6 +47,7 @@ android:
   - google-gdk-license-.+
 
 before_install:
+  - "export TRAVIS_LAST_COMMIT_MSG=\"$(git log --format=%s --no-merges -n 1)\""
   - mkdir "$ANDROID_HOME/licenses" || true
   - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
   - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
@@ -69,3 +70,21 @@ script:
   - ./gradlew build
   - ./gradlew detektCheck ktlintCheck
   #- ./gradlew connectedCheck -PdisablePreDex -Dorg.gradle.parallel=false -Pandroid.testInstrumentationRunnerArguments.notAnnotation=android.support.test.filters.FlakyTest
+
+deploy:
+  - provider: script
+    script:
+      ./gradlew publishApkProRelease
+    on:
+      tags: true
+    skip_cleanup: true
+
+  #- provider: script
+  #  script:
+  #    ./gradlew assembleBetaRelease crashlyticsUploadDistributionBetaRelease -PbetaDistributionReleaseNotes="$TRAVIS_LAST_COMMIT_MSG" -PbetaDistributionGroupAliases="sikling" ;
+  #  on:
+  #    branch: master
+  #  skip_cleanup: true
+
+after_deploy:
+  - ./gradlew createTweet

@@ -27,6 +27,28 @@ android {
         }
     }
 
+    flavorDimensions "stage"
+    productFlavors {
+        pro {
+            dimension "stage"
+        }
+        dev {
+            dimension "stage"
+            versionName "${project.versionName} DEV"
+            applicationId "com.sikling.app.dev"
+            versionCode Integer.parseInt(project.getDate())
+        }
+    }
+
+    variantFilter { variant ->
+        def names = variant.flavors*.name
+        if ((names.contains("dev") && variant.buildType.name == "release") || (names.contains("pro") &&
+                variant.buildType.name ==
+                "debug")) {
+            variant.ignore = true
+        }
+    }
+
     dataBinding {
         enabled = true
     }

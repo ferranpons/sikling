@@ -68,7 +68,8 @@ before_script:
 
 script:
   - ./gradlew build
-  - ./gradlew detektCheck ktlintCheck
+  - ./gradlew ktlintCheck
+  #- ./gradlew detektCheck ktlintCheck
   #- ./gradlew connectedCheck -PdisablePreDex -Dorg.gradle.parallel=false -Pandroid.testInstrumentationRunnerArguments.notAnnotation=android.support.test.filters.FlakyTest
 
 deploy:

@@ -58,13 +58,6 @@ ext {
     versionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch
 }
 
-static def getDate() {
-    def date = new Date()
-
-    def formattedDate = date.format('yyMMddHHmm')
-    return formattedDate
-}
-
 def getVersionMajor() {
     def content = file('version.properties')
 

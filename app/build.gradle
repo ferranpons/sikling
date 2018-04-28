@@ -5,6 +5,13 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'com.github.triplet.play'
 apply plugin: 'twitter-gradle-plugin'
 
+static def getDate() {
+    def date = new Date()
+
+    def formattedDate = date.format('yyMMddHHmm')
+    return formattedDate
+}
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -36,7 +43,7 @@ android {
             dimension "stage"
             versionName "${project.versionName} DEV"
             applicationId "com.sikling.app.dev"
-            versionCode Integer.parseInt(project.getDate())
+            versionCode Integer.parseInt(getDate())
         }
     }
 

@@ -5,11 +5,16 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven {
+            url  "https://dl.bintray.com/ferranpons/maven"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "gradle.plugin.org.jlleitschuh.gradle:ktlint-gradle:3.2.0"
+        classpath 'com.github.triplet.gradle:play-publisher:1.2.0'
+        classpath 'com.ferranpons:twitter-gradle-plugin:1.0.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -42,4 +47,43 @@ detekt {
         config = "$projectDir/detekt-config.yml"
         filters = ".*test.*,.*/resources/.*,.*/tmp/.*"
     }
+}
+
+ext {
+    travisBuild = System.getenv("TRAVIS") == "true"
+    versionMajor = getVersionMajor()
+    versionMinor = getVersionMinor()
+    versionPatch = getVersionPatch()
+    versionName = "${versionMajor}.${versionMinor}.${versionPatch}"
+    versionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch
+}
+
+def getVersionMajor() {
+    def content = file('version.properties')
+
+    Properties properties = new Properties()
+    InputStream is = new ByteArrayInputStream(content.getBytes())
+    properties.load(is)
+
+    return properties['MAJOR'].toInteger()
+}
+
+def getVersionMinor() {
+    def content = file('version.properties')
+
+    Properties properties = new Properties()
+    InputStream is = new ByteArrayInputStream(content.getBytes())
+    properties.load(is)
+
+    return properties['MINOR'].toInteger()
+}
+
+def getVersionPatch() {
+    def content = file('version.properties')
+
+    Properties properties = new Properties()
+    InputStream is = new ByteArrayInputStream(content.getBytes())
+    properties.load(is)
+
+    return properties['PATCH'].toInteger()
 }

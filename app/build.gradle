@@ -1,8 +1,16 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.github.triplet.play'
+apply plugin: 'twitter-gradle-plugin'
+
+static def getDate() {
+    def date = new Date()
+
+    def formattedDate = date.format('yyMMddHHmm')
+    return formattedDate
+}
 
 android {
     compileSdkVersion 27
@@ -10,14 +18,41 @@ android {
         applicationId "com.sikling.app"
         minSdkVersion 23
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        versionCode project.versionCode
+        versionName project.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "stage"
+    productFlavors {
+        pro {
+            dimension "stage"
+        }
+        dev {
+            dimension "stage"
+            versionName "${project.versionName} DEV"
+            applicationId "com.sikling.app.dev"
+            versionCode Integer.parseInt(getDate())
+        }
+    }
+
+    variantFilter { variant ->
+        def names = variant.flavors*.name
+        if ((names.contains("dev") && variant.buildType.name == "release") || (names.contains("pro") &&
+                variant.buildType.name ==
+                "debug")) {
+            variant.ignore = true
         }
     }
 
@@ -28,7 +63,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    kapt 'com.android.databinding:compiler:3.1.2'
 
     def supportLibraryVersion = '27.1.1'
     implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
@@ -37,14 +73,22 @@ dependencies {
 
     def butterKnifeVersion = '8.8.1'
     implementation "com.jakewharton:butterknife:$butterKnifeVersion"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+    kapt "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
 
     def glideVersion = '4.6.1'
     implementation "com.github.bumptech.glide:glide:$glideVersion"
-    annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
 
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+twitterPlugin {
+    consumerKey = System.getenv()['TWITTER_API_KEY']
+    consumerSecret = System.getenv()['TWITTER_API_SECRET']
+    accessToken = System.getenv()['TWITTER_ACCESS_TOKEN']
+    accessTokenSecret = System.getenv()['TWITTER_ACCESS_TOKEN_SECRET']
+    message = "New Sikling version ${project.versionName} available for download. Check out the details at https://github.com/ferranpons/sikling #Android #application #OpenSource"
 }

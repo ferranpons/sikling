@@ -49,7 +49,7 @@ class AdListingAdapter : RecyclerView.Adapter<AdListingAdapter.AdsViewHolder>() 
                 }
             })
 
-            holder.favoritesButton?.setOnClickListener({ v ->
+            holder.favoritesButton?.setOnClickListener({ _ ->
                 object : Thread() {
                     override fun run() {
                         val adapterPosition = holder.adapterPosition

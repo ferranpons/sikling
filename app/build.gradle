@@ -14,6 +14,7 @@ static def getDate() {
 
 android {
     compileSdkVersion 27
+
     defaultConfig {
         applicationId "com.sikling.app"
         minSdkVersion 23
@@ -23,6 +24,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
+
     buildTypes {
         debug {
             applicationIdSuffix ".debug"
@@ -31,10 +33,21 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile rootProject.file('sikling_android.jks')
+            storePassword System.getenv("RELEASE_STORE_PASSWORD")
+            keyAlias System.getenv("RELEASE_KEY_ALIAS")
+            keyPassword System.getenv("RELEASE_KEY_PASSWORD")
         }
     }
 
     flavorDimensions "stage"
+
     productFlavors {
         pro {
             dimension "stage"

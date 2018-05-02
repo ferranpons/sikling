@@ -98,6 +98,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
+play {
+    jsonFile = file('sikling_secrets.json')
+}
+
 twitterPlugin {
     consumerKey = System.getenv()['TWITTER_API_KEY']
     consumerSecret = System.getenv()['TWITTER_API_SECRET']

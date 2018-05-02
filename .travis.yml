@@ -77,9 +77,10 @@ deploy:
   - provider: script
     script:
       ./gradlew publishApkProRelease
+    skip_cleanup: true
+    all_branches: true
     on:
       tags: true
-    skip_cleanup: true
 
 after_deploy:
   - ./gradlew createTweet

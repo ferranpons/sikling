@@ -27,7 +27,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile rootProject.file('../sikling_android.jks')
+            storeFile rootProject.file('sikling_android.jks')
             storePassword System.getenv("RELEASE_STORE_PASSWORD")
             keyAlias System.getenv("RELEASE_KEY_ALIAS")
             keyPassword System.getenv("RELEASE_KEY_PASSWORD")

@@ -99,7 +99,7 @@ dependencies {
 }
 
 play {
-    jsonFile = file('sikling_secrets.json')
+    jsonFile = file('../sikling_secrets.json')
 }
 
 twitterPlugin {

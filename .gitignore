@@ -44,6 +44,7 @@ captures/
 # Keystore files
 *.jks
 sikling_secrets.json
+secrets.tar
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild

@@ -3,7 +3,7 @@ language: android
 branches:
   only:
     - master
-    - /^v\d+\.\d+\.\d+$/
+    - /^v.*$/
 
 jdk:
 - oraclejdk8
@@ -78,7 +78,6 @@ deploy:
     script:
       ./gradlew publishApkProRelease
     skip_cleanup: true
-    all_branches: true
     on:
       tags: true
 

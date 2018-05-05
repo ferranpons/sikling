@@ -29,6 +29,7 @@ class AdListingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val staggeredGridLayoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        staggeredGridLayoutManager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_NONE
         val recyclerView = view.findViewById<RecyclerView>(R.id.ad_listing_recyclerview)
         recyclerView.layoutManager = staggeredGridLayoutManager
         recyclerView.setHasFixedSize(true)

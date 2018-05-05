@@ -4,63 +4,11 @@
   Author: ferranpons
   -->
 
-<img src="media/sikling_logo.png" align="left" height="128px" />
-<img align="left" width="0" height="128px" hspace="10" />
+# Sikling
 
-<div style="display:block; height: 168px;">
-* <i>Sikling app for Android</i> *
-
-[![Build Status](https://travis-ci.org/ferranpons/sikling.svg?branch=master)](https://travis-ci.org/ferranpons/sikling) [ ![Sikling Trending](http://starveller.sigsev.io/api/repos/ferranpons/sikling/badge) ](http://starveller.sigsev.io/ferranpons/sikling)
+[Work in Progress] It will be a free and open source community-driven application for cycling enthusiasts.
 
 
-</div>
-
-<br/>
-<p align="center">
-<b><a href="#features">Features</a></b>
-|
-<b><a href="#download">Download</a></b>
-|
-<b><a href="#who-made-this">Who Made This</a></b>
-|
-<b><a href="#contribute">Contribute</a></b>
-|
-<b><a href="#bugs-and-feedback">Bugs and Feedback</a></b>
-|
-<b><a href="#license">License</a></b>
-</p>
-<br/>
-
-### Features
-
-
-
-
-
-Who made this
---------------
-
-| <a href="https://github.com/ferranpons"><img src="https://avatars2.githubusercontent.com/u/1225463?v=3&s=460" alt="Ferran Pons" align="left" height="100" width="100" /></a>
-|---
-| [Ferran Pons](https://github.com/ferranpons)
-
-
-Contribute
-----------
-
-1. Create an issue to discuss about your idea
-2. [Fork it] (https://github.com/ferranpons/sikling/fork)
-3. Create your feature branch (`git checkout -b my-new-feature`)
-4. Commit your changes (`git commit -am 'Add some feature'`)
-5. Push to the branch (`git push origin my-new-feature`)
-6. Create a new Pull Request
-7. Profit! :white_check_mark:
-
-
-Bugs and Feedback
------------------
-
-For bugs, questions and discussions please use the [Github Issues](https://github.com/ferranpons/sikling/issues).
 
 
 License

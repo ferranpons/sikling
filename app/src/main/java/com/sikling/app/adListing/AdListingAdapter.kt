@@ -9,10 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.sikling.app.R
-import com.bumptech.glide.load.resource.bitmap.TransformationUtils.centerCrop
 import com.bumptech.glide.request.RequestOptions
-
-
 
 class AdListingAdapter : RecyclerView.Adapter<AdListingAdapter.AdsViewHolder>() {
 

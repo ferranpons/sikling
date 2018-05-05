@@ -9,6 +9,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.sikling.app.R
+import com.bumptech.glide.load.resource.bitmap.TransformationUtils.centerCrop
+import com.bumptech.glide.request.RequestOptions
+
+
 
 class AdListingAdapter : RecyclerView.Adapter<AdListingAdapter.AdsViewHolder>() {
 
@@ -36,7 +40,13 @@ class AdListingAdapter : RecyclerView.Adapter<AdListingAdapter.AdsViewHolder>() 
             holder.title.text = viewModel.title
             holder.price.text = viewModel.price
             holder.date.text = viewModel.date
-            Glide.with(holder.image.context).load(viewModel.image).into(holder.image)
+
+            val options = RequestOptions()
+            options.optionalFitCenter()
+            Glide.with(holder.image.context)
+                    .load(viewModel.image)
+                    .apply(options)
+                    .into(holder.image)
             /*if (viewModel.image != "") {
                 mImageLoader.loadImage(viewModel.image, holder.image)
             } else {

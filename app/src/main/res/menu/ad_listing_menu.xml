@@ -7,5 +7,5 @@
         android:icon="@drawable/ic_search_white_24dp"
         android:orderInCategory="100"
         app:showAsAction="always"
-        android:title="Search" />
+        android:title="@string/search_menu_icon_description" />
 </menu>

@@ -37,7 +37,7 @@ class AdListingFragment : Fragment() {
     }
 
     private fun onMenuClicked(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.menu_search -> SearchActivity.launch(activity)
         }
         return true

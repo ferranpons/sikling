@@ -5,10 +5,13 @@ import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.StaggeredGridLayoutManager
+import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import com.sikling.app.R
+import com.sikling.app.search.SearchActivity
 import java.security.SecureRandom
 
 class AdListingFragment : Fragment() {
@@ -22,12 +25,30 @@ class AdListingFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.fragment_ad_listing, container, false)
+        val view = inflater.inflate(R.layout.fragment_ad_listing, container, false)
+        setupToolBar(view)
+        return view
+    }
+
+    private fun setupToolBar(view: View) {
+        val toolBar = view.findViewById<Toolbar>(R.id.toolbar)
+        toolBar.inflateMenu(R.menu.ad_listing_menu)
+        toolBar.setOnMenuItemClickListener { item -> onMenuClicked(item) }
+    }
+
+    private fun onMenuClicked(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_search -> SearchActivity.launch(activity)
+        }
+        return true
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupRecyclerView(view)
+    }
 
+    private fun setupRecyclerView(view: View) {
         val staggeredGridLayoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         staggeredGridLayoutManager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_NONE
         val recyclerView = view.findViewById<RecyclerView>(R.id.ad_listing_recyclerview)

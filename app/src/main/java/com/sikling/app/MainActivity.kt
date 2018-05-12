@@ -6,6 +6,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.support.design.internal.BottomNavigationMenuView
 import android.support.design.internal.BottomNavigationItemView
+import androidx.navigation.Navigation.findNavController
 import com.sikling.app.adInsertion.AdInsertionFragment
 import com.sikling.app.adListing.AdListingFragment
 import com.sikling.app.favorites.FavoritesFragment
@@ -49,6 +50,9 @@ class MainActivity : AppCompatActivity() {
         navigation.selectedItemId = R.id.navigation_home
         disableMenuShiftingMode()
     }
+
+    override fun onSupportNavigateUp()
+            = findNavController(this, R.id.content_frame).navigateUp()
 
     @SuppressLint("RestrictedApi")
     private fun disableMenuShiftingMode() {

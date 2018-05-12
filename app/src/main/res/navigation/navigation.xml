@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            app:startDestination="@id/mainActivity">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.sikling.app.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main"/>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.sikling.app.favorites.FavoritesFragment"
+        android:label="FavoritesFragment"/>
+    <fragment
+        android:id="@+id/adInsertionFragment"
+        android:name="com.sikling.app.adInsertion.AdInsertionFragment"
+        android:label="AdInsertionFragment"/>
+    <fragment
+        android:id="@+id/messagingFragment"
+        android:name="com.sikling.app.messaging.MessagingFragment"
+        android:label="MessagingFragment"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.sikling.app.profile.ProfileFragment"
+        android:label="ProfileFragment"/>
+    <fragment
+        android:id="@+id/adListingFragment"
+        android:name="com.sikling.app.adListing.AdListingFragment"
+        android:label="AdListingFragment"/>
+</navigation>

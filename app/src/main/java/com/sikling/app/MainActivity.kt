@@ -4,8 +4,6 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import android.support.design.internal.BottomNavigationMenuView
-import android.support.design.internal.BottomNavigationItemView
 import com.sikling.app.adInsertion.AdInsertionFragment
 import com.sikling.app.adListing.AdListingFragment
 import com.sikling.app.favorites.FavoritesFragment

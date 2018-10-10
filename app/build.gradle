@@ -77,7 +77,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    kapt 'com.android.databinding:compiler:3.1.4'
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
     def supportLibraryVersion = '28.0.0'
     implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
@@ -88,7 +88,7 @@ dependencies {
     implementation "com.jakewharton:butterknife:$butterKnifeVersion"
     kapt "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
 
-    def glideVersion = '4.3.1'
+    def glideVersion = '4.6.1'
     implementation "com.github.bumptech.glide:glide:$glideVersion"
     kapt "com.github.bumptech.glide:compiler:$glideVersion"
 

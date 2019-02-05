@@ -2,8 +2,8 @@ package com.sikling.app
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.sikling.app.adInsertion.AdInsertionFragment
 import com.sikling.app.adListing.AdListingFragment
 import com.sikling.app.favorites.FavoritesFragment
@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
-        navigation.selectedItemId = R.id.navigation_home
+        //navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        //navigation.selectedItemId = R.id.navigation_home
         disableMenuShiftingMode()
     }
 

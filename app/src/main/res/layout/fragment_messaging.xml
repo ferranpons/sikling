@@ -41,7 +41,7 @@
 
     <include layout="@layout/loading_custom_view"/>
 
-    <android.support.v4.widget.SwipeRefreshLayout
+    <androidx.core.widget.SwipeRefreshLayout
         android:id="@+id/swipe_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -59,7 +59,7 @@
             android:clipToPadding="false"
             />
 
-    </android.support.v4.widget.SwipeRefreshLayout>
+    </androidx.core.widget.SwipeRefreshLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/button_scroll_to_top"

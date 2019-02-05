@@ -3,7 +3,7 @@ package com.sikling.app.search
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.sikling.app.R
 
 class SearchActivity : AppCompatActivity() {

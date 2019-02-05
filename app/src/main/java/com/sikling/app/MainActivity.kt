@@ -9,7 +9,6 @@ import com.sikling.app.adListing.AdListingFragment
 import com.sikling.app.favorites.FavoritesFragment
 import com.sikling.app.messaging.MessagingFragment
 import com.sikling.app.profile.ProfileFragment
-import kotlinx.android.synthetic.main.activity_main.navigation
 
 class MainActivity : AppCompatActivity() {
 

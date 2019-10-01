@@ -15,23 +15,23 @@ class MainActivity : AppCompatActivity() {
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                fragmentManager.beginTransaction().replace(R.id.content_frame, AdListingFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.content_frame, AdListingFragment()).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_favorites -> {
-                fragmentManager.beginTransaction().replace(R.id.content_frame, FavoritesFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.content_frame, FavoritesFragment()).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_ad_insertion -> {
-                fragmentManager.beginTransaction().replace(R.id.content_frame, AdInsertionFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.content_frame, AdInsertionFragment()).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                fragmentManager.beginTransaction().replace(R.id.content_frame, MessagingFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.content_frame, MessagingFragment()).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_profile -> {
-                fragmentManager.beginTransaction().replace(R.id.content_frame, ProfileFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.content_frame, ProfileFragment()).commit()
                 return@OnNavigationItemSelectedListener true
             }
         }

@@ -13,12 +13,12 @@ static def getDate() {
 }
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
 
     defaultConfig {
         applicationId "com.sikling.app"
         minSdkVersion 23
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode project.versionCode
         versionName project.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

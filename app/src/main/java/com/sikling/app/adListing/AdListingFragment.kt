@@ -1,12 +1,13 @@
 package com.sikling.app.adListing
 
-import android.app.Fragment
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -24,7 +25,7 @@ class AdListingFragment : Fragment() {
         addDummyRandomContent()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_ad_listing, container, false)
         setupToolBar(view)
         return view
@@ -38,7 +39,7 @@ class AdListingFragment : Fragment() {
 
     private fun onMenuClicked(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menu_search -> SearchActivity.launch(activity)
+            R.id.menu_search -> SearchActivity.launch(activity as Context)
         }
         return true
     }
